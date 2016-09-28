@@ -43,6 +43,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ComplexListContainer
 import React, { Component, PropTypes } from "react";
 import ComplexListItem from "./ComplexListItem";
 
+// ComplexList 
 export default class ComplexList extends Component {
   static propTypes = {
     items: Proptypes.arrayOf(Proptypes.shape({
@@ -51,14 +52,7 @@ export default class ComplexList extends Component {
     demoAction: PropTypes.func.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    // Bindings
-    this._complexListItems = this._complexListItems.bind(this);
-  }
-
-  _complexListItems() {
+  _complexListItems = () => {
     const { items } = this.props.data;
     return items.forEach( (item) => <ComplexListItem item={item} /> );
   }
@@ -74,6 +68,7 @@ export default class ComplexList extends Component {
 ```javascript
 import { PropTypes } from "react";
 
+// ComplexListItem presentational component
 export default function ComplexListItem(props) {
   const { message } = props;
   return <li>{message}</li>;
