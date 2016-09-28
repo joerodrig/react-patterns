@@ -50,9 +50,13 @@ export default class ComplexList extends Component {
         message: Proptypes.string.isRequired,
     })).isRequired,
     demoAction: PropTypes.func.isRequired,
+    
+    // Bindings
+    this._complexListItems = this._complexListItems.bind(this);
+    
   };
 
-  _complexListItems = () => {
+  _complexListItems() {
     const { items } = this.props.data;
     return items.forEach( (item) => <ComplexListItem item={item} /> );
   }
