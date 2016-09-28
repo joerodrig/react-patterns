@@ -3,7 +3,7 @@
 # Build the container
 
 ```javascript
-import React, {Component, PropTypes} from "react";
+import React, { Component, PropTypes } from "react";
 import ComplexList from "./ComplexList";
 
 class ComplexListContainer extends Component {
@@ -13,7 +13,7 @@ class ComplexListContainer extends Component {
   };
 
   render() {
-    const {data, demoAction} = this.props;
+    const { data, demoAction } = this.props;
     return <ComplexList items={data.items} demoAction={demoAction} />;
   }
 }
@@ -34,7 +34,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ComplexListContainer
 # Build the list component
 
 ```javascript
-import React, {Component, PropTypes} from "react";
+import React, { Component, PropTypes } from "react";
 import ComplexListItem from "./ComplexListItem";
 
 export default class ComplexList extends Component {
@@ -53,7 +53,7 @@ export default class ComplexList extends Component {
   }
 
   _complexListItems() {
-    const {items} = this.props.data;
+    const { items } = this.props.data;
     return items.forEach( (item) => <ComplexListItem item={item} );
   }
 
@@ -66,10 +66,10 @@ export default class ComplexList extends Component {
 # Build the list item Component
 
 ```javascript
-import {PropTypes} from "react";
+import { PropTypes } from "react";
 
 export default function ComplexListItem(props) {
-  const {message} = props;
+  const { message } = props;
   return <li>{message}</li>;
 }
 
