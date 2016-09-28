@@ -4,6 +4,7 @@
 
 ```javascript
 import React, {Component, PropTypes} from "react";
+import ComplexList from "./ComplexList";
 
 class ComplexListContainer extends Component {
   static propTypes = {
@@ -34,6 +35,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(ComplexListContainer
 # Build the list component
 
 ```javascript
+import React, {Component, PropTypes} from "react";
+import ComplexListItem from "./ComplexListItem";
+
 export default class ComplexList extends Component {
   static propTypes = {
     items: Proptypes.array.isRequired,
@@ -61,7 +65,9 @@ export default class ComplexList extends Component {
 # Build the list item Component
 
 ```javascript
-export default function ComplextListItem(props) {
+import {PropTypes} from "react";
+
+export default function ComplexListItem(props) {
   const {message} = props;
   return <li>{message}</li>;
 }
