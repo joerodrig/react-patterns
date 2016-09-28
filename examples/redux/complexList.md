@@ -1,5 +1,11 @@
 # Complex List
 
+In many cases, you may end up with a list that needs to keep in sync with the
+Redux store. This pattern allows our list to keep in sync with our store, without
+being dependent on the parent component that calls it(ie. A page container). This
+is done on purpose. This solution reduces the amount of times props get passed
+through components, allowing us to isolate actions and data to specific components. 
+
 # Build the container
 
 ```javascript
