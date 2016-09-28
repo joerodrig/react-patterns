@@ -75,5 +75,5 @@ export default function ComplexListItem(props) {
 
 ComplexListItem.propTypes = {
   message: Proptypes.string.isRequired,
-}
+};
 ```
