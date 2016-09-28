@@ -60,7 +60,7 @@ export default class ComplexList extends Component {
 
   _complexListItems() {
     const { items } = this.props.data;
-    return items.forEach( (item) => <ComplexListItem item={item} );
+    return items.forEach( (item) => <ComplexListItem item={item} /> );
   }
 
   render() {
