@@ -8,7 +8,7 @@ import ComplexList from "./ComplexList";
 
 class ComplexListContainer extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({items: Proptypes.array.isRequired}).isRequired,
     demoAction: PropTypes.func.isRequired,
   };
 
@@ -31,7 +31,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(ComplexListContainer);
 ```
 
-
 # Build the list component
 
 ```javascript
@@ -40,7 +39,9 @@ import ComplexListItem from "./ComplexListItem";
 
 export default class ComplexList extends Component {
   static propTypes = {
-    items: Proptypes.array.isRequired,
+    items: Proptypes.arrayOf(Proptypes.shape({
+        message: Proptypes.string.isRequired,
+    })).isRequired,
     demoAction: PropTypes.func.isRequired,
   };
 
@@ -70,5 +71,9 @@ import {PropTypes} from "react";
 export default function ComplexListItem(props) {
   const {message} = props;
   return <li>{message}</li>;
+}
+
+ComplexListItem.propTypes = {
+  message: Proptypes.string.isRequired,
 }
 ```
